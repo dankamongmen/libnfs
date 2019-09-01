@@ -704,7 +704,7 @@ rpc_set_sockaddr(struct rpc_context *rpc, const char *server, int port)
 
 	if (getaddrinfo(server, NULL, NULL, &ai) != 0) {
 		rpc_set_error(rpc, "Invalid address:%s. "
-			      "Can not resolv into IPv4/v6 structure.", server);
+			      "Can not resolve into IPv4/v6 structure.", server);
 		return -1;
  	}
 
@@ -896,7 +896,7 @@ rpc_bind_udp(struct rpc_context *rpc, char *addr, int port)
 	sprintf(service, "%d", port);
 	if (getaddrinfo(addr, service, NULL, &ai) != 0) {
 		rpc_set_error(rpc, "Invalid address:%s. "
-			      "Can not resolv into IPv4/v6 structure.", addr);
+			      "Can not resolve into IPv4/v6 structure.", addr);
 		return -1;
  	}
 
@@ -948,7 +948,7 @@ rpc_set_udp_destination(struct rpc_context *rpc, char *addr, int port,
 	sprintf(service, "%d", port);
 	if (getaddrinfo(addr, service, NULL, &ai) != 0) {
 		rpc_set_error(rpc, "Invalid address:%s. "
-			      "Can not resolv into IPv4/v6 structure.", addr);
+			      "Can not resolve into IPv4/v6 structure.", addr);
 		return -1;
  	}
 
